@@ -3,7 +3,7 @@ import useFetch from "../useFetch";
 
 const Book = () => {
     const [successMessage, setSuccessMessage] = useState("")
-    const {data, loading, error} = useFetch("https://bookapp-sooty.vercel.app/book")
+    const {data, loading, error} = useFetch(`${import.meta.env.VITE_API_URL}/book`)
     // console.log(data)
 
     const [books, setBooks] = useState([])
@@ -16,7 +16,7 @@ const Book = () => {
 
     const handleDelete = async(bookId) =>{
         try{
-            const response = await fetch(`https://bookapp-sooty.vercel.app/book/${bookId}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/book/${bookId}`, {
                 method: 'DELETE',
             })
             if(!response.ok){
