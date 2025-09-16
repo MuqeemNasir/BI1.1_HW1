@@ -1,7 +1,7 @@
 import useFetch from "../useFetch"
 
 const BookByAuthor = ({author}) => {
-    const {data, loading, error} = useFetch(`/book/author/${author}`)
+    const {data, loading, error} = useFetch(`https://bookapp-sooty.vercel.app/book/author/${author}`)
     
     return(
         data ? <div>

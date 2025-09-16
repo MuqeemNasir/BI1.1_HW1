@@ -37,7 +37,7 @@ const AddBookForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("/book", {
+      const response = await fetch("https://bookapp-sooty.vercel.app/book", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
