@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import useFetch from "../useFetch";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 const Book = () => {
     const [successMessage, setSuccessMessage] = useState("")
