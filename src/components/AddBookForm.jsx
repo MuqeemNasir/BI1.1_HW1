@@ -37,7 +37,7 @@ const AddBookForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/book`, {
+      const response = await fetch(`book`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

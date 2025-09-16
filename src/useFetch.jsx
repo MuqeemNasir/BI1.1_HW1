@@ -1,22 +1,25 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
-const useFetch = (url, initialData) => {
-    const [data, setData] = useState(initialData)
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(null)
+const BASE_URL = "https://bookapp-sooty.vercel.app"; // backend URL
 
-    useEffect(() => {
-        setLoading(true)
+const useFetch = (endpoint, initialData) => {
+  const [data, setData] = useState(initialData);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-        fetch(url)
-        .then(res => res.json())
-        .then(data => {
-            setData(data)
-        })
-        .catch(error => setError(error.message))
-        .finally(() => setLoading(false))
-    }, [url])
-    return {data, loading, error}
-}
+  useEffect(() => {
+    setLoading(true);
 
-export default useFetch
+    fetch(`${BASE_URL}${endpoint}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+      })
+      .catch((error) => setError(error.message))
+      .finally(() => setLoading(false));
+  }, [endpoint]);
+
+  return { data, loading, error, setData };
+};
+
+export default useFetch;

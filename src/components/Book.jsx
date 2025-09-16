@@ -3,7 +3,7 @@ import useFetch from "../useFetch";
 
 const Book = () => {
     const [successMessage, setSuccessMessage] = useState("")
-    const {data, loading, error} = useFetch(`${import.meta.env.VITE_API_URL}/book`)
+    const {data, loading, error} = useFetch(`/book`)
     // console.log(data)
 
     const [books, setBooks] = useState([])
@@ -16,7 +16,7 @@ const Book = () => {
 
     const handleDelete = async(bookId) =>{
         try{
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/book/${bookId}`, {
+            const response = await fetch(`/book/${bookId}`, {
                 method: 'DELETE',
             })
             if(!response.ok){

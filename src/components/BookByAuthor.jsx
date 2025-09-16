@@ -1,7 +1,7 @@
 import useFetch from "../useFetch"
 
 const BookByAuthor = ({author}) => {
-    const {data, loading, error} = useFetch(`${import.meta.env.VITE_API_URL}/book/${author}`)
+    const {data, loading, error} = useFetch(`/book/${author}`)
     
     return(
         data ? <div>
