@@ -4,7 +4,7 @@ const BASE_URL = import.meta.env.VITE_API_URL;
 
 const Book = () => {
     const [successMessage, setSuccessMessage] = useState("")
-    const {data, loading, error} = useFetch(`${BASE_URL}/book`)
+    const {data, loading, error} = useFetch(`/book`)
     // console.log(data)
 
     const [books, setBooks] = useState([])

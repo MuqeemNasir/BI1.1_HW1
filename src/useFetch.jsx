@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 const BASE_URL = import.meta.env.VITE_API_URL;
 
 const useFetch = (endpoint, initialData) => {
@@ -12,9 +11,7 @@ const useFetch = (endpoint, initialData) => {
 
     fetch(`${BASE_URL}${endpoint}`)
       .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-      })
+      .then((data) => setData(data))
       .catch((error) => setError(error.message))
       .finally(() => setLoading(false));
   }, [endpoint]);
