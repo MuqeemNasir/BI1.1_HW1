@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const BASE_URL = "https://bookapp-sooty.vercel.app"; // backend URL
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 const useFetch = (endpoint, initialData) => {
   const [data, setData] = useState(initialData);
