@@ -1,7 +1,7 @@
 import useFetch from "../useFetch"
 
 const BookByTitle = ({title}) => {
-    const {data, loading, error} = useFetch(`/book/title/${title}`)
+    const {data, loading, error} = useFetch(`${BASE_URL}/book/title/${title}`)
     console.log(data)
 
     return(

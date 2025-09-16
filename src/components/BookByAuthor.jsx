@@ -1,7 +1,7 @@
 import useFetch from "../useFetch"
 
 const BookByAuthor = ({author}) => {
-    const {data, loading, error} = useFetch(`/book/${author}`)
+    const {data, loading, error} = useFetch(`${BASE_URL}/book/${author}`)
     
     return(
         data ? <div>
